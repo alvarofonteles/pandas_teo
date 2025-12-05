@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+.jupyter/
+
+# IDEs
+.vscode/
+.idea/
+
+# Virtual Environments
+.env
+.venv/
+venv/
+
+# Logs
+*.log
+
+# SQLite (se usar banco local nos testes)
+*.db
+*.sqlite3
+
+# CSVs
+*.csv
