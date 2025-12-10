@@ -25,5 +25,8 @@ venv/
 *.db
 *.sqlite3
 
-# CSVs
+# Ignora todos os CSVs
 *.csv
+
+# Mas não ignora os CSVs dentro de dia02
+!dia02/*.csv
