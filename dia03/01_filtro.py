@@ -64,3 +64,49 @@ apostolos[filtro]  # e cria-se um novo dataframe filtrado
 # %%
 # como se passase literal [False, True, True] dentro do dataframe
 apostolos[[False, True, True]]  # mesmo resultado
+
+
+# usando agora dados reais do dataset transacoes.csv
+# %%
+import pandas as pd
+
+df = pd.read_csv('../data/transacoes.csv')
+df.head()
+
+# %%
+# valores maiores que 50
+filtro = df['QtdePontos'] >= 50
+df[filtro]
+
+# %%
+# valores entre 50 (inclusive) e 100
+# usando o operador lógico do Pandas & (and)
+filtro = (df['QtdePontos'] >= 50) & (df['QtdePontos'] < 100)
+filtro  # devolver uma seriea de bool
+df[filtro]  # cria a nova estrutura
+
+# %%
+# usando o operador lógico do Pandas | (or)
+filtro = (df['QtdePontos'] == 1) | (df['QtdePontos'] == 100)
+df[filtro]
+
+# %%
+# pontos entre 0 e 50 ou do ano de 2025 para frente
+# usando ambos operadores lógico do Pandas & (and) e | (or)
+# a logica deve ser entre parenteses ()
+filtro = ((df['QtdePontos'] > 0) & (df['QtdePontos'] <= 50)) | (
+    df['dtCriacao'] >= '2025-01-01'
+)
+df[filtro]
+
+
+# tabela verdade
+# True  and True  = True
+# True  and False = False
+# False and True  = False
+# False and False = False
+
+# True  or True  = True
+# True  or False = True
+# False or True  = True
+# False or False = False
